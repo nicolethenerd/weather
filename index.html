@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Weather Widget</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Nicole Stein">
+    <meta name="keywords" content="weather">
+    <meta name="description" content="A weather widget that calls openweathermap.org.">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div id="container">
+			<header>
+				<h1>Weather Widget</h1>
+			</header>
+
+      <form id="weather-widget">
+        <input id="city" type="text">
+        <button id="go">Go!</button>
+
+        <input type="radio" name="units" value="imperial" checked="true"> &deg;F
+        <input type="radio" name="units" value="metric"> &deg;C
+      </form>
+
+      <div>
+        <div>Temp: <span id="temp"></span></div>
+        <div>Description: <span id="description"></span></div>
+        <div>Humidity: <span id="humidity"></span></div>
+        <div>Coordinates: <span id="coordinates"></span></div>
+        <div>Sunrise: <span id="sunrise"></span></div>
+        <div>Sunset: <span id="sunset"></span></div>
+      </div>
+
+			<footer>
+				&copy; Nicole Stein
+			</footer>
+		</div><!-- #container -->
+
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
