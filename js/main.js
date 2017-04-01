@@ -14,18 +14,15 @@ function convertUnixTimestamp(unix_timestamp) {
 	return formattedTime;
 }
 
-function dataLoaded(data)
-{
+function dataLoaded(data) {
 	console.log(data);
 
 	var units = $("input[name='units']:checked").val();
-	if(units === "imperial")
-	{
+	if(units === "imperial") {
 		console.log("Temp: " + data.main.temp + "&deg;F");
 		$("#temp").html(data.main.temp + "&deg;F");
 	}
-	else
-	{
+	else {
 		console.log("Temp: " + data.main.temp + "&deg;C");
 		$("#temp").html(data.main.temp + "&deg;C");
 	}
@@ -55,12 +52,11 @@ function getWeather(event) {
 	event.preventDefault();
 
 	// Make the AJAX call
-	$.getJSON("http://api.openweathermap.org/data/2.5/weather", 
-		{
-			appid: "84bee75ccc48d73cd18de3a8c2d85c8e",
-			q: $("#city").val(),
-			units: $("input[name='units']:checked").val()
-		}, dataLoaded);
+	$.getJSON("http://api.openweathermap.org/data/2.5/weather", {
+		appid: "84bee75ccc48d73cd18de3a8c2d85c8e",
+		q: $("#city").val(),
+		units: $("input[name='units']:checked").val(),
+	}, dataLoaded);
 }
 
 $("#weather-widget").submit(getWeather);
